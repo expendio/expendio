@@ -1,7 +1,8 @@
 {
   "name": "expendio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://expendio.github.io/expendio",
   "scripts": {
     "start": "react-scripts start",
     "build": "CI=false react-scripts build",
