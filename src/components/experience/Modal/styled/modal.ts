@@ -26,7 +26,7 @@ export const Header = styled.header`
   margin-bottom: 16px;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   margin: 0 0 0 16px;
   color: ${Colors.DARK};
   flex: 1;
@@ -34,7 +34,6 @@ export const Title = styled.h3`
 `;
 
 export const Body = styled.main`
-  padding: 16px 0 0;
   display: flex;
   flex-direction: column;
   flex: 1;

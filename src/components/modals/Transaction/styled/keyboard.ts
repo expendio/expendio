@@ -47,4 +47,8 @@ export const KeyButton = styled.button.attrs((props: any) => props)`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+
+  &:active {
+    background-color: ${Colors.WARNING};
+  }
 `;

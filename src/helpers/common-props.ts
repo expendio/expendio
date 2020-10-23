@@ -1,5 +1,3 @@
-import { CSSProperties } from 'react';
-
 export interface PositionProps {
   mT?: boolean;
   mR?: boolean;
@@ -7,5 +5,5 @@ export interface PositionProps {
   mL?: boolean;
   fullWidth?: boolean;
   className?: string;
-  style?: CSSProperties;
+  style?: object;
 }

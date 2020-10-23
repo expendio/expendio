@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import { Icons } from './Icons';
 
 export interface IconProps {
@@ -8,5 +7,5 @@ export interface IconProps {
   height?: number;
   width?: number;
   className?: string;
-  style?: CSSProperties;
+  style?: object;
 }

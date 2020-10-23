@@ -3,6 +3,7 @@ import { CategoryModel } from './categories';
 export enum TransactionType {
   Expense,
   Income,
+  Transfer,
 }
 
 export interface TransactionModel {

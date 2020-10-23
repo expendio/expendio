@@ -8,7 +8,6 @@ interface Props {
   isOpen: boolean;
   title: string;
   onClose: () => void;
-  // children: (onClose) => ReactNode;
 }
 
 const Modal: FunctionComponent<Props> = (props) => {
@@ -18,7 +17,13 @@ const Modal: FunctionComponent<Props> = (props) => {
     return ReactDOM.createPortal((
       <StyledModal>
         <Header>
-          <IconButton onClick={onClose} icon={Icons.CHEVRON_LEFT} buttonColor="dark" />
+          <IconButton
+            onClick={onClose}
+            icon={Icons.CHEVRON_LEFT}
+            buttonColor="dark"
+            height={32}
+            width={32}
+          />
           <Title>{title}</Title>
           <EmptyBlock />
         </Header>
