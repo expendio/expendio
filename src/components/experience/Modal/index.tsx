@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import ReactDOM from 'react-dom';
+import { Vibrations } from 'helpers';
+import IconButton from 'components/base-components/IconButton';
+import { Icons } from 'components/base-components/SvgIcon/Icons';
 import { Header, StyledModal, Title, Body, EmptyBlock } from './styled/modal';
-import IconButton from '../../base-components/IconButton';
-import { Icons } from '../../base-components/SvgIcon/Icons';
 
 interface Props {
   isOpen: boolean;
@@ -13,14 +14,20 @@ interface Props {
 const Modal: FunctionComponent<Props> = (props) => {
   const { isOpen, title, onClose, children } = props;
 
+  const handleClose = () => {
+    Vibrations.buttonTouch();
+    onClose();
+  };
+
   if (isOpen) {
     return ReactDOM.createPortal((
       <StyledModal>
         <Header>
           <IconButton
-            onClick={onClose}
+            onClick={handleClose}
             icon={Icons.CHEVRON_LEFT}
             buttonColor="dark"
+            style={{ height: '38px', width: '38px' }}
             height={32}
             width={32}
           />

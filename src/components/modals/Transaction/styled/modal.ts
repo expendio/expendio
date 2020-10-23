@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Colors from 'styles/colors';
+import { TransactionType } from 'models/transactions';
 
 export const Body = styled.div`
   padding: 0 16px;
@@ -10,6 +11,7 @@ export const Body = styled.div`
 
 export const TypeSelector = styled.div`
   display: flex;
+  margin-bottom: 12px;
 `;
 
 const getSelectedStyles = (props) => {
@@ -50,6 +52,32 @@ export const TypeButton = styled.button.attrs((props: any) => props)`
   }
 `;
 
+export const Options = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+export const Option = styled.button`
+  outline: none;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const OptionLabel = styled.span`
+  font-size: 16px;
+  margin-bottom: 8px;
+`;
+
+export const OptionValue = styled.span`
+  font-size: 24px;
+  font-weight: bold;
+`;
+
 export const AmountBox = styled.div`
   display: flex;
   align-items: center;
@@ -57,7 +85,29 @@ export const AmountBox = styled.div`
   padding: 12px;
   background-color: ${Colors.LIGHT_GRAY};
   border-radius: 12px;
-  margin: auto 18px 32px;
+  margin: 0 18px 32px;
+`;
+
+const getColor = (props) => {
+  const { type } = props;
+
+  switch (type as TransactionType) {
+    case TransactionType.Transfer:
+      return Colors.DARK;
+    case TransactionType.Income:
+      return Colors.SUCCESS;
+    case TransactionType.Expense:
+      return Colors.ERROR;
+    default:
+      return Colors.DARK;
+  }
+};
+
+export const Sign = styled.span.attrs((props: any) => props)`
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: auto;
+  color: ${getColor};
 `;
 
 export const Amount = styled.span`

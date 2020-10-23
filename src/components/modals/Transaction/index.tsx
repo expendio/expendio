@@ -1,13 +1,26 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { formatCurrency } from 'helpers';
 import Colors from 'styles/colors';
+import { TransactionType } from 'models/transactions';
+import { formatCurrency, Vibrations } from 'helpers';
 import SvgIcon, { Icons } from 'components/base-components/SvgIcon';
 import Modal from 'components/experience/Modal';
-import resolveNextAmount from './utils/resolve-next-amount';
-import { Amount, AmountBox, Body, RecordButton, RecordLabel, TypeButton, TypeSelector } from './styled/modal';
+import { resolveNextAmount, resolveSign } from './utils';
+import {
+  Amount,
+  AmountBox,
+  Body,
+  RecordButton,
+  RecordLabel,
+  Sign,
+  TypeButton,
+  TypeSelector,
+  Options,
+  Option,
+  OptionLabel,
+  OptionValue,
+} from './styled/modal';
 import Keyboard from './Keyboard';
 import CurrencyBox from './CurrencyBox';
-import { TransactionType } from '../../../models/transactions';
 
 interface Props {
   isOpen: boolean;
@@ -18,7 +31,7 @@ const TransactionModal: FunctionComponent<Props> = (props) => {
   const { isOpen, onClose } = props;
   const [amount, setAmount] = useState('');
   const [currency, setCurrency] = useState({ id: 1, name: 'CUP' });
-  const [type, setType] = useState<TransactionType>(TransactionType.Income);
+  const [type, setType] = useState<TransactionType>(TransactionType.Expense);
 
   useEffect(() => {
     setAmount('');
@@ -28,30 +41,49 @@ const TransactionModal: FunctionComponent<Props> = (props) => {
     setAmount(resolveNextAmount(amount, key));
   };
 
+  const handleTypeChange = (event) => {
+    Vibrations.buttonTouch();
+    setType(parseInt(event.target.dataset.type, 10));
+  };
+
   return (
     <Modal isOpen={isOpen} title="Record Transaction" onClose={onClose}>
       <Body>
         <TypeSelector>
           <TypeButton
+            data-type={TransactionType.Income}
             selected={type === TransactionType.Income}
-            onClick={() => setType(TransactionType.Income)}
+            onClick={handleTypeChange}
           >
             Income
           </TypeButton>
           <TypeButton
+            data-type={TransactionType.Expense}
             selected={type === TransactionType.Expense}
-            onClick={() => setType(TransactionType.Expense)}
+            onClick={handleTypeChange}
           >
             Expense
           </TypeButton>
           <TypeButton
+            data-type={TransactionType.Transfer}
             selected={type === TransactionType.Transfer}
-            onClick={() => setType(TransactionType.Transfer)}
+            onClick={handleTypeChange}
           >
             Transfer
           </TypeButton>
         </TypeSelector>
+        <Options>
+          <Option>
+            <OptionLabel>Account</OptionLabel>
+            <OptionValue>Wallet</OptionValue>
+          </Option>
+          <Option>
+            <OptionLabel>Category</OptionLabel>
+            <OptionValue>Clothes</OptionValue>
+          </Option>
+        </Options>
         <AmountBox>
+          <Sign type={type}>{resolveSign(type)}</Sign>
           <Amount>
             {formatCurrency(amount)}
           </Amount>

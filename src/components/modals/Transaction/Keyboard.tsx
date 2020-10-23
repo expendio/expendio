@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Colors from 'styles/colors';
+import { Vibrations } from 'helpers';
 import SvgIcon, { Icons } from 'components/base-components/SvgIcon';
 import { StyledKeyboard, Key, KeyButton, KeySpace } from './styled/keyboard';
 
@@ -13,7 +14,7 @@ const Keyboard: FunctionComponent<Props> = (props) => {
   const { onKeyStroke } = props;
 
   const handleKeyTouch = (event) => {
-    window.navigator.vibrate(30);
+    Vibrations.buttonTouch();
     onKeyStroke(event.target.dataset.key);
   };
 

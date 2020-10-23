@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { StyledCurrencyBox, Currency } from './styled/currency-box';
+import { Vibrations } from '../../../helpers';
 
 interface Props {
   active: any;
@@ -16,6 +17,7 @@ const CurrencyBox: FunctionComponent<Props> = (props) => {
   const { active, onChange } = props;
 
   const handleCurrencyChange = () => {
+    Vibrations.buttonTouch();
     const currentSelectedIndex = currencies.findIndex((c) => c.id === active.id);
     onChange(currencies[currentSelectedIndex === 2 ? 0 : currentSelectedIndex + 1]);
   };

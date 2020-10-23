@@ -6,3 +6,4 @@ export * from './generators';
 export * from './styled-helpers';
 export * from './unique-id';
 export * from './format';
+export * from './haptic-feedback';

@@ -14,10 +14,10 @@ describe('Button base component', () => {
   it('should render the label and icons passed', () => {
     const rightIcon = <SvgIcon icon={Icons.HEART_FILLED} />;
     const leftIcon = <SvgIcon icon={Icons.BELL} />;
-    const button = mount(
+    const buttonTouch = mount(
       <Button
         onClick={onClickMock}
-        label="button 1"
+        label="buttonTouch 1"
         leftIcon={leftIcon}
         rightIcon={rightIcon}
       />,
@@ -31,10 +31,10 @@ describe('Button base component', () => {
   });
 
   it('should show the is loading text', () => {
-    const button = mount(
+    const buttonTouch = mount(
       <Button
         onClick={onClickMock}
-        label="button 1"
+        label="buttonTouch 1"
         isLoading
       />,
     );
@@ -43,10 +43,10 @@ describe('Button base component', () => {
   });
 
   it('should return the content passed as children over the one generated from props', () => {
-    const button = mount(
+    const buttonTouch = mount(
       <Button
         onClick={onClickMock}
-        label="button 1"
+        label="buttonTouch 1"
         isLoading
       >
         expected text

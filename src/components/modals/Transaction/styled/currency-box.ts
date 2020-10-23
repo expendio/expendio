@@ -3,7 +3,7 @@ import Colors from 'styles/colors';
 
 export const StyledCurrencyBox = styled.div`
   width: 64px;
-  margin-left: 12px;
+  margin-left: 4px;
   display: flex;
   justify-content: center;
   cursor: pointer;

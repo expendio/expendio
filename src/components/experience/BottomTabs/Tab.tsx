@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Colors from 'styles/colors';
 import SvgIcon, { Icons } from 'components/base-components/SvgIcon';
 import { StyledTab } from './styled/tab';
+import { Vibrations } from '../../../helpers';
 
 interface Props {
   to: string;
@@ -16,7 +17,7 @@ const Tab: FunctionComponent<Props> = (props) => {
 
   return (
     <Link to={to}>
-      <StyledTab isActive={isActive}>
+      <StyledTab onClick={Vibrations.buttonTouch} isActive={isActive}>
         <SvgIcon icon={icon} color={isActive ? Colors.ACCENT : Colors.DARK} />
       </StyledTab>
     </Link>

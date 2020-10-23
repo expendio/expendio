@@ -40,7 +40,7 @@ const Avatar: FunctionComponent<AvatarProps> = (props) => {
   const { icon, size, alt, onClick } = props;
 
   return (
-    <StyledAvatar onClick={onClick} role="button" tabIndex={0} size={size}>
+    <StyledAvatar onClick={onClick} role="buttonTouch" tabIndex={0} size={size}>
       <Img alt={alt} src={icons[icon]} size={size} />
     </StyledAvatar>
   );

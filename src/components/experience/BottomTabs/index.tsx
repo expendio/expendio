@@ -1,18 +1,21 @@
 import React, { FunctionComponent, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Colors from 'styles/colors';
+import { Vibrations } from 'helpers';
 import { Icons } from 'components/base-components/SvgIcon/Icons';
 import SvgIcon from 'components/base-components/SvgIcon';
+import TransactionModal from 'components/modals/Transaction';
 import { Action, StyledTabs } from './styled/tabs';
 import Tab from './Tab';
-import Modal from '../Modal';
-import TransactionModal from '../../modals/Transaction';
 
 const BottomTabs: FunctionComponent = () => {
   const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true);
+  const openModal = () => {
+    setIsOpen(true);
+    Vibrations.buttonTouch();
+  };
   const closeModal = () => setIsOpen(false);
 
   return (
