@@ -7,7 +7,8 @@ const getBackgroundColor = (props) => {
   return color;
 };
 
-export const StyledAccount = styled.div.attrs((props: any) => props)`
+export const StyledAccount = styled.li.attrs((props: any) => props)`
+  position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 6px;
@@ -18,7 +19,7 @@ export const StyledAccount = styled.div.attrs((props: any) => props)`
 
 export const Name = styled.span`
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   color: ${Colors.WHITE};
 `;
 
@@ -36,4 +37,17 @@ export const Currency = styled.span`
   align-items: center;
   font-size: 18px;
   width: 50%;
+`;
+
+export const SelectedMark = styled.div`
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: ${Colors.BACKGROUND.LIGHT};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 6px;
+  right: 6px;
 `;

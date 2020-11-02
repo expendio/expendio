@@ -8,7 +8,7 @@ export const StyledApp = styled.section`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: ${Colors.WHITE};
+  background-color: ${Colors.BACKGROUND.LIGHT};
 `;
 
 export const AppBody = styled.section`

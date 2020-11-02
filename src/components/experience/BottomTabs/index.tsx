@@ -1,22 +1,22 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent } from 'react';
 import { useLocation } from 'react-router-dom';
 import Colors from 'styles/colors';
 import { Vibrations } from 'helpers';
+import { useModalStackActions } from 'components/providers/ModalStackProvider';
+import { ModalList } from 'components/experience/ModalStack';
 import { Icons } from 'components/base-components/SvgIcon/Icons';
 import SvgIcon from 'components/base-components/SvgIcon';
-import TransactionModal from 'components/modals/Transaction';
 import { Action, StyledTabs } from './styled/tabs';
 import Tab from './Tab';
 
 const BottomTabs: FunctionComponent = () => {
   const { pathname } = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const { pushModal } = useModalStackActions();
 
   const openModal = () => {
-    setIsOpen(true);
+    pushModal({ name: ModalList.TRANSACTION });
     Vibrations.buttonTouch();
   };
-  const closeModal = () => setIsOpen(false);
 
   return (
     <>
@@ -26,10 +26,9 @@ const BottomTabs: FunctionComponent = () => {
         <Action onClick={openModal}>
           <SvgIcon icon={Icons.BOOKMARK_ADD} color={Colors.WHITE} />
         </Action>
-        <Tab icon={Icons.BOOKMARKS} to="/accounts" currentPath={pathname} />
+        <Tab icon={Icons.WALLET} to="/accounts" currentPath={pathname} />
         <Tab icon={Icons.SETTINGS} to="/settings" currentPath={pathname} />
       </StyledTabs>
-      <TransactionModal isOpen={isOpen} onClose={closeModal} />
     </>
   );
 };

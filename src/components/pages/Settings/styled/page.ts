@@ -7,7 +7,7 @@ export const StyledSettings = styled.section`
 `;
 
 export const Header = styled.h2`
-  color: ${Colors.DARK};
+  color: ${Colors.FONT.DARK};
   margin-top: 0;
   margin-bottom: 24px;
 `;
@@ -23,6 +23,6 @@ export const SubMenu = styled.div`
 `;
 
 export const SubTitle = styled.h1`
-  color: ${Colors.DARK};
+  color: ${Colors.FONT.DARK};
   margin: 0;
 `;

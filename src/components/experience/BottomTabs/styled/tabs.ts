@@ -24,5 +24,5 @@ export const Action = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${Colors.ACCENT};
+  background-color: ${Colors.BRAND};
 `;

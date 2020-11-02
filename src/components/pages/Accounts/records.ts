@@ -25,7 +25,7 @@ export const accounts = [
   },
   {
     id: generateUID(),
-    color: Colors.INFO,
+    color: Colors.ACCENT,
     name: 'Savings',
     balance: [
       { name: 'CUC', amount: parseFloat(faker.finance.amount(10, 1000)) },

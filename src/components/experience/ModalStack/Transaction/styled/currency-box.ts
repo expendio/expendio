@@ -13,5 +13,5 @@ export const Currency = styled.span`
   font-size: 28px;
   font-weight: bold;
   text-transform: uppercase;
-  color: ${Colors.DARK};
+  color: ${Colors.FONT.DARK};
 `;

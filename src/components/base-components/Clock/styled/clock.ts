@@ -8,8 +8,6 @@ export const StyledClock = styled.div`
   height: ${outerSize}px;
   width: ${outerSize}px;
   position: relative;
-  margin-left: 100px;
-  margin-top: 100px;
 `;
 
 export const OuterRing = styled.div`
@@ -23,7 +21,7 @@ export const OuterRing = styled.div`
   right: 0;
   display: flex;
   flex-direction: column;
-  background-color: ${Colors.BRAND_SHADE};
+  background-color: ${Colors.BACKGROUND.DARK};
 `;
 
 export const Content = styled.div`
@@ -32,23 +30,41 @@ export const Content = styled.div`
   height: 100%;
 `;
 
-export const Marker = styled.div`
+const getActiveStyles = (props) => {
+  const { active } = props;
+
+  if (active) {
+    return `
+      background-color: ${Colors.BRAND_DARK};
+      color: ${Colors.WHITE};
+    `;
+  }
+  return `
+    background-color: transparent;
+  `;
+};
+
+export const Marker = styled.button`
+  outline: none;
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: none;
   border-radius: 50%;
-  background-color: ${Colors.DARK};
-  color: ${Colors.WHITE};
+  color: ${Colors.DARK};
   height: ${markerSize}px;
   width: ${markerSize}px;
   font-size: ${markerSize / 2}px;
   line-height: ${markerSize}px;
   cursor: pointer;
+  ${getActiveStyles};
+  transition: all 150ms linear;
 
-  &:hover {
+  &:active {
     background-color: ${Colors.BRAND_DARK};
+    color: ${Colors.WHITE};
   }
 `;
 
@@ -65,4 +81,20 @@ export const HourLabel = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const HourButton = styled.button.attrs((props: any) => props)`
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  padding: 2px;
+  margin: 2px;
+  font-size: 26px;
+  ${getActiveStyles};
+  transition: all 150ms linear;
+
+  &:active {
+    background-color: ${Colors.BRAND_DARK};
+    color: ${Colors.WHITE};
+  }
 `;

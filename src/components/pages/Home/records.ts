@@ -20,7 +20,7 @@ export const accounts = [
 export const transactions: TransactionModel[] = [
   {
     id: generateUID(),
-    label: faker.lorem.words(3),
+    label: 'zapatos de cuero negro',
     type: TransactionType.Expense,
     amount: parseFloat(faker.finance.amount(5, 1000)),
     category: { name: faker.lorem.words(3), color: Colors.BRAND, icon: Icons.BELL },

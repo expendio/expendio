@@ -1,4 +1,4 @@
-import { TransactionType } from '../../../../models/transactions';
+import { TransactionType } from 'models/transactions';
 
 export function resolveSign(type: TransactionType) {
   switch (type) {

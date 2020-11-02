@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import { Vibrations } from 'helpers';
 import { StyledCurrencyBox, Currency } from './styled/currency-box';
-import { Vibrations } from '../../../helpers';
 
 interface Props {
   active: any;

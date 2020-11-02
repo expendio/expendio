@@ -12,8 +12,8 @@ const getBackgroundColor = (props) => {
 };
 
 export const StyledTab = styled.div.attrs((props: any) => props)`
-  height: 32px;
-  width: 32px;
+  height: 38px;
+  width: 38px;
   border-radius: 50%;
   display: flex;
   flex-direction: column;

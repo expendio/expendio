@@ -14,6 +14,6 @@ export const Header = styled.div`
 `;
 
 export const HeaderLabel = styled.h2`
-  color: ${Colors.DARK};
+  color: ${Colors.FONT.DARK};
   margin: 0;
 `;

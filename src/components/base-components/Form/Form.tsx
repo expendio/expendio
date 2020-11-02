@@ -3,8 +3,8 @@ import { FormProvider } from './context';
 
 interface Props {
   id?: string;
-  value: object;
-  onChange: (nextValue: object) => void;
+  value: any;
+  onChange: (nextValue: any) => void;
 }
 
 const Form: FunctionComponent<Props> = (props) => {

@@ -34,6 +34,11 @@ import PublicityIcon from './Publicity';
 import PublisherIcon from './Publisher';
 import MegaphoneIcon from './Megaphone';
 import Megaphone2Icon from './Megaphone2';
+import MoreHorizontalIcon from './MoreHorizontal';
+import FormIcon from './Form';
+import AdvertisementIcon from './Advertisement';
+import CreditCardIcon from './CreditCard';
+import WalletIcon from './Wallet';
 
 export enum Icons {
   HOME = 'home',
@@ -71,6 +76,11 @@ export enum Icons {
   PUBLISHER = 'PUBLISHER',
   MEGAPHONE = 'MEGAPHONE',
   MEGAPHONE2 = 'MEGAPHONE2',
+  MORE_HORIZONTAL = 'more-horizontal',
+  FORM = 'form',
+  ADVERTISEMENT = 'ADVERTISEMENT',
+  CREDIT_CARD = 'credit-card',
+  WALLET = 'wallet',
 }
 
 export const icons = {
@@ -109,4 +119,9 @@ export const icons = {
   [Icons.PUBLISHER]: (props) => <PublisherIcon {...props} />,
   [Icons.MEGAPHONE]: (props) => <MegaphoneIcon {...props} />,
   [Icons.MEGAPHONE2]: (props) => <Megaphone2Icon {...props} />,
+  [Icons.MORE_HORIZONTAL]: (props) => <MoreHorizontalIcon {...props} />,
+  [Icons.FORM]: (props) => <FormIcon {...props} />,
+  [Icons.ADVERTISEMENT]: (props) => <AdvertisementIcon {...props} />,
+  [Icons.CREDIT_CARD]: (props) => <CreditCardIcon {...props} />,
+  [Icons.WALLET]: (props) => <WalletIcon {...props} />,
 };

@@ -6,7 +6,7 @@ export const StyledKeyboard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px;
+  padding: 16px 32px;
   border-top-left-radius: 48px;
   border-top-right-radius: 48px;
 `;
@@ -22,21 +22,21 @@ export const Key = styled.td`
     padding: 12px;
     box-sizing: border-box;
     text-align: center;
-    height: 42px;
-    min-height: 42px;
+    height: 48px;
+    min-height: 48px;
 `;
 
 export const KeyButton = styled.button.attrs((props: any) => props)`
   outline: none;
-  background-color: ${Colors.WHITE_SHADE};
+  background-color: ${Colors.BACKGROUND.SHADE};
   border-radius: 48px;
   font-size: 20px;
   font-weight: bold;
   line-height: 36px;
-  height: 48px;
-  min-height: 48px;
-  width: 48px;
-  min-width: 48px;
+  height: 52px;
+  min-height: 52px;
+  width: 52px;
+  min-width: 52px;
   box-sizing: border-box;
   color: ${Colors.WHITE};
   overflow: visible;
@@ -49,6 +49,6 @@ export const KeyButton = styled.button.attrs((props: any) => props)`
   margin: 0 auto;
 
   &:active {
-    background-color: ${Colors.WARNING};
+    background-color: ${Colors.ACCENT};
   }
 `;

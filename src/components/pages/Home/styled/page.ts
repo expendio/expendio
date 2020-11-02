@@ -24,7 +24,7 @@ export const HeaderText = styled.div`
 `;
 
 export const HeaderLabel = styled.h2`
-  color: ${Colors.DARK};
+  color: ${Colors.FONT.DARK};
   margin-top: 0;
   margin-bottom: 4px;
 `;
